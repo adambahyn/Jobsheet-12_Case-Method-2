@@ -3,7 +3,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         LLTransaksi list = new LLTransaksi();
+        AntrianKendaraan q = new AntrianKendaraan(10);
         int pilih;
+
         do {
             Scanner sc = new Scanner(System.in);
             System.out.println("--- Menu SPBU ---");
@@ -25,24 +27,28 @@ public class Main {
                     String jenis = sc.nextLine();
                     System.out.print("Masukkan Merk: ");
                     String merk = sc.nextLine();
+                    q.tambahAntrian(new Kendaraan(plat, jenis, merk));
                     break;
                 case 2:
-                    System.out.println("-- Antrian Kendaraan --");
+                    q.print();
                     break;
                 case 3:
-
+                    System.out.println(">> Jumlah kendaraan dalam antrian: " + q.jumlahKendaraan());
                     break;
                 case 4:
-                    System.out.print("Petugas Melayani ");
-                    System.out.print("Masukkan Jenis BBM: ");
-                    String bbm = sc.nextLine();
-                    System.out.print("Masukkan Harga Per Liter: ");
-                    double harga = sc.nextDouble();
-                    System.out.print("Masukkan Jumlah Liter: ");
-                    int jumlah = sc.nextInt();
-                    sc.nextLine();
-                    TransaksiPengisian trk = new TransaksiPengisian(null, null, jumlah);
-                    list.addLast(trk);
+                    Kendaraan dequeued = q.layaniAntrian();
+                    if (dequeued != null) {
+                        System.out.println("Petugas Melayani " + dequeued.platNomor);
+                        System.out.print("Masukkan Jenis BBM: ");
+                        String bbm = sc.nextLine();
+                        System.out.print("Masukkan Harga Per Liter: ");
+                        double harga = sc.nextDouble();
+                        System.out.print("Masukkan Jumlah Liter: ");
+                        int jumlah = sc.nextInt();
+                        sc.nextLine();
+                        TransaksiPengisian trk = new TransaksiPengisian(null, null, jumlah);
+                        list.addLast(null);
+                    }
                     break;
                 case 5:
                     System.out.println("-- Riwayat Transaksi --");
