@@ -40,14 +40,16 @@ public class Main {
                     if (dequeued != null) {
                         System.out.println("Petugas Melayani " + dequeued.platNomor);
                         System.out.print("Masukkan Jenis BBM: ");
-                        String bbm = sc.nextLine();
+                        String jenisBbm = sc.nextLine();
                         System.out.print("Masukkan Harga Per Liter: ");
                         double harga = sc.nextDouble();
                         System.out.print("Masukkan Jumlah Liter: ");
                         int jumlah = sc.nextInt();
                         sc.nextLine();
-                        TransaksiPengisian trk = new TransaksiPengisian(null, null, jumlah);
-                        list.addLast(null);
+                        BBM bbm = new BBM(jenisBbm, harga); 
+
+                        TransaksiPengisian trk = new TransaksiPengisian(dequeued, bbm, jumlah);
+                        list.addLast(trk);
                     }
                     break;
                 case 5:
