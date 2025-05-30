@@ -8,4 +8,8 @@ public class TransaksiPengisian {
         this.bbm = bbm;
         this.liter = liter;
     }
+
+    void tampilInformasi() {
+        System.out.println(kendaraan.platNomor + ": Rp " + totalBayar);
+    }
 }

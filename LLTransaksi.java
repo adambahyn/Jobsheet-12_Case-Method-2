@@ -6,12 +6,11 @@ public class LLTransaksi {
         tail = null;
     }
 
-    
     boolean isEmpty() {
         return head == null;
     }
 
-      public void addLast(TransaksiPengisian data) {
+    public void addLast(TransaksiPengisian data) {
         NodeTransaksi newNode = new NodeTransaksi(data);
         if (isEmpty()) {
             head = tail = newNode;
@@ -19,6 +18,15 @@ public class LLTransaksi {
             tail.next = newNode;
             newNode.prev = tail;
             tail = newNode;
+        }
+    }
+
+    public void print() {
+        NodeTransaksi current = head;
+        System.out.println("Daftar Transaksi: ");
+        while (current != null) {
+            current.data.tampilInformasi();
+            current = current.next;
         }
     }
 }
