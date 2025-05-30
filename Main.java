@@ -12,10 +12,16 @@ public class Main {
         System.out.println("0. Keluar");
         System.out.print("Pilih: ");
         int pilih = sc.nextInt();
+        sc.nextLine();
 
         switch (pilih) {
             case 1:
-                
+                System.out.print("Masukkan Plat Nomor: ");
+                String plat = sc.nextLine();
+                System.out.print("Masukkan Jenis Kendaraan: ");
+                String jenis = sc.nextLine();
+                System.out.print("Masukkan Merk: ");
+                String erk = sc.nextLine();
                 break;
             case 2:
                 System.out.println("-- Antrian Kendaraan --");
@@ -24,7 +30,14 @@ public class Main {
                 
                 break;
             case 4:
-                
+                System.out.print("Petugas Melayani ");
+                System.out.print("Masukkan Jenis BBM: ");
+                String bbm = sc.nextLine();
+                System.out.print("Masukkan Harga Per Liter: ");
+                double harga = sc.nextDouble();
+                System.out.print("Masukkan Jumlah Liter: ");
+                int jumlah = sc.nextInt();
+                sc.nextLine();
                 break;
             case 5:
                 System.out.println("-- Riwayat Transaksi --");
