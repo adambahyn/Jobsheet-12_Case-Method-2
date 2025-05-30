@@ -25,7 +25,8 @@ public class LLTransaksi {
         NodeTransaksi current = head;
         System.out.println("Daftar Transaksi: ");
         while (current != null) {
-            current.data.tampilInformasi();
+            TransaksiPengisian tr = current.data;
+            System.out.println(tr.getKendaraan().platNomor + ": Rp " + tr.totalBayar());
             current = current.next;
         }
     }
