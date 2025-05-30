@@ -42,7 +42,7 @@ public class Main {
                     int jumlah = sc.nextInt();
                     sc.nextLine();
                     TransaksiPengisian trk = new TransaksiPengisian(null, null, jumlah);
-                    list.addLast(null);
+                    list.addLast(trk);
                     break;
                 case 5:
                     System.out.println("-- Riwayat Transaksi --");
