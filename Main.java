@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         LLTransaksi list = new LLTransaksi();
         AntrianKendaraan q = new AntrianKendaraan(10);
         int pilih;
 
         do {
-            Scanner sc = new Scanner(System.in);
             System.out.println("--- Menu SPBU ---");
             System.out.println("1. Tambah Antrian Kendaraan");
             System.out.println("2. Tampilkan Antrian");
@@ -50,6 +50,7 @@ public class Main {
 
                         TransaksiPengisian trk = new TransaksiPengisian(dequeued, bbm, jumlah);
                         list.addLast(trk);
+                        System.out.println(">> Transaksi berhasil dicatat.");
                     }
                     break;
                 case 5:
@@ -60,6 +61,8 @@ public class Main {
                 default:
                     break;
             }
+            System.out.println();
         } while (pilih != 0);
+        sc.close();
     }
 }
